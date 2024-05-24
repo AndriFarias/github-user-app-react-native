@@ -29,6 +29,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
+      <Text style={styles.title}>Procure um Usuário do Github</Text>
         <Input
           placeholder="Digite o nome do seu usuário"
           onChangeText={setUsuario}
@@ -56,13 +57,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
-  input: {
-    marginBottom: 20,
-  },
   errorText: {
     marginTop: 20,
-    color: 'red',
+    color: '#c1121f',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 40,
   },
 });

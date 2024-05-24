@@ -5,7 +5,7 @@ import Item from './item.component';
 export default function User({ data }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.name}>{data.name}</Text>
+      <Text style={styles.name}>{data.name || data.login}</Text>
       <Image source={{ uri: data.avatar_url }} style={styles.image} />
       <View style={styles.itemsContainer}>
         <Item title="Repositórios" number={data.public_repos} />
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     elevation: 5, 
     marginVertical: 20,
     width: '95%', 
+    marginTop: 40,
   },
   name: {
     fontSize: 28, 

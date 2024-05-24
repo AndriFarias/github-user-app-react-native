@@ -1,17 +1,18 @@
-const urlApi = "https://api.github.com"
+const urlApi = "https://api.github.com";
 
 const getUser = async (usuario) => {
-    try {
-        const response = await fetch(`${urlApi}/user/${usuario}`)
-        const data = response.json()
+  try {
+    const response = await fetch(`${urlApi}/users/${usuario}`);
+    const data = await response.json(); 
 
-        if(!response.ok){
-            console.log("Usuário não encontrado")
-        }
-        return data
-    } catch (error) {
-        console.log(error);
+    if (!response.ok) {
+      console.log("Usuário não encontrado");
     }
+    return data;
+  } catch (error) {
+    console.log(error);
+    return null; 
+  }
 }
 
-export { getUser }
+export { getUser };
